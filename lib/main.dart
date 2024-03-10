@@ -1,4 +1,5 @@
 import 'package:english_words/english_words.dart';
+import 'package:stopwordies/stopwordies.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -68,7 +69,7 @@ class BigCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(20.0),
       child: Text(pair.asLowerCase),
     );
   }
