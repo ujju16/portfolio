@@ -1,5 +1,5 @@
 import 'package:english_words/english_words.dart';
-import 'package:stopwordies/stopwordies.dart';
+//import 'package:stopwordies/stopwordies.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         title: 'Portfolio Dev',
         theme: ThemeData(
           useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
         ),
         home: MyHomePage(),
       ),
@@ -44,7 +44,7 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Text('Idée Du Jour:'),
+          Text('Mots au Pif:'),
           BigCard(pair: pair),
           ElevatedButton(
             onPressed: (){
@@ -68,9 +68,11 @@ class BigCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: Text(pair.asLowerCase),
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Text(pair.asLowerCase),
+      ),
     );
   }
 }
