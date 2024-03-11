@@ -44,7 +44,10 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Text('Mots au Pif:'),
+          Padding(
+            padding: const EdgeInsets.all(50),
+            child: Center(child: Text('Mots au Pif:')),
+          ),
           BigCard(pair: pair),
           ElevatedButton(
             onPressed: (){
