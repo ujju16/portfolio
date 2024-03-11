@@ -40,13 +40,15 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     var appState = context.watch<MyAppState>();
     var pair = appState.current;
+    final theme = Theme.of(context);
+    final style = theme.textTheme.displayMedium!;
 
     return Scaffold(
       body: Column(
         children: [
           Padding(
             padding: const EdgeInsets.all(50),
-            child: Center(child: Text('Mots au Pif:')),
+            child: Center(child: Text('Mots au Pif:', style: style)),
           ),
           BigCard(pair: pair),
           ElevatedButton(
