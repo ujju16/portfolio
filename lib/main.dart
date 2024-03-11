@@ -47,7 +47,7 @@ class MyHomePage extends StatelessWidget {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(50),
+            padding: const EdgeInsets.all(20),
             child: Center(child: Text('Mots au Pif:', style: style)),
           ),
           BigCard(pair: pair),
