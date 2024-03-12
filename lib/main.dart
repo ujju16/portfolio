@@ -44,21 +44,24 @@ class MyHomePage extends StatelessWidget {
     final style = theme.textTheme.displayMedium!;
 
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(20),
-            child: Center(child: Text('Mots au Pif:', style: style)),
-          ),
-          BigCard(pair: pair),
-          ElevatedButton(
-            onPressed: (){
-              appState.getNext();
-          },
-            child: Text('Next'),
-          ),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Text('Mots au Pif:', style: style),
+            ),
+            BigCard(pair: pair),
+            SizedBox(height: 100),
+            ElevatedButton(
+              onPressed: (){
+                appState.getNext();
+            },
+              child: Text('Next'),
+            ),
+          ],
+        ),
       ),
     );
   }
