@@ -33,6 +33,16 @@ class MyAppState extends ChangeNotifier {
     current = WordPair.random();
     notifyListeners();
   }
+  var favorites = <WordPair>[];
+
+  void toggleFavorite() {
+    if (favorites.contains(current)) {
+      favorites.remove(current);
+    } else {
+      favorites.add(current);
+    }
+    notifyListeners();
+  }
 }
 
 class MyHomePage extends StatelessWidget {
@@ -53,7 +63,7 @@ class MyHomePage extends StatelessWidget {
               child: Text('Mots au Pif:', style: style),
             ),
             BigCard(pair: pair),
-            SizedBox(height: 100),
+            SizedBox(height: 10),
             ElevatedButton(
               onPressed: (){
                 appState.getNext();
