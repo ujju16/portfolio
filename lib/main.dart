@@ -1,4 +1,5 @@
 import 'package:english_words/english_words.dart';
+import 'package:flutter/cupertino.dart';
 //import 'package:stopwordies/stopwordies.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -9,7 +10,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -45,7 +46,6 @@ class MyAppState extends ChangeNotifier {
   }
 }
 
-// ...
 
 class MyHomePage extends StatelessWidget {
   @override
@@ -53,23 +53,25 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       body: Row(
         children: [
-          SafeArea(
-            child: NavigationRail(
-              extended: false,
-              destinations: [
-                NavigationRailDestination(
-                  icon: Icon(Icons.home),
-                  label: Text('Home'),
-                ),
-                NavigationRailDestination(
-                  icon: Icon(Icons.favorite),
-                  label: Text('Favorites'),
-                ),
-              ],
-              selectedIndex: 0,
-              onDestinationSelected: (value) {
-                print('selected: $value');
-              },
+          Expanded(
+            child: SafeArea(
+              child: NavigationRail(
+                extended: false,
+                destinations: [
+                  NavigationRailDestination(
+                    icon: Icon(Icons.home),
+                    label: Text('Home'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.favorite),
+                    label: Text('Favorites'),
+                  ),
+                ],
+                selectedIndex: 0,
+                onDestinationSelected: (value) {
+                  print('selected: $value');
+                },
+              ),
             ),
           ),
           Expanded(
@@ -77,7 +79,7 @@ class MyHomePage extends StatelessWidget {
               color: Theme.of(context).colorScheme.primaryContainer,
               child: GeneratorPage(),
             ),
-          ),
+            ),
         ],
       ),
     );
