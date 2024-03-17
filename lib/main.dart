@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         title: 'Portfolio Dev',
         theme: ThemeData(
           useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.redAccent),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurpleAccent),
         ),
         home: MyHomePage(),
       ),
